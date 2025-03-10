@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1, p {
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* Container */
+        .project-container {
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .project-container:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Video */
+        .video-container {
+            margin: 20px 0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        #project-video {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 10px 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+
+        .primary-btn {
+            background: #007bff;
+            color: white;
+        }
+
+        .primary-btn:hover {
+            background: #0056b3;
+        }
+
+        .secondary-btn {
+            background: #6c757d;
+            color: white;
+        }
+
+        .secondary-btn:hover {
+            background: #565e64;
+        }
+
+        /* Back Button */
+        .back-btn {
+            display: block;
+            margin-top: 20px;
+            color: #007bff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .back-btn:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="project-container">
+        <h1 id="project-title">Project Title</h1>
+        
+        <div class="video-container">
+            <video id="project-video" controls>
+                <source id="video-source" src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <p id="project-description">Explore this amazing project! Watch the video or check out the source code.</p>
+
+        <div class="project-links">
+            <a id="video-link" href="#" target="_blank" class="btn primary-btn">Watch Full Video</a>
+            <a id="github-link" href="#" target="_blank" class="btn secondary-btn">View on GitHub</a>
+        </div>
+
+        <a href="portfolio.html" class="back-btn">⬅ Back to Portfolio</a>
+    </div>
+
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const title = urlParams.get('title') || "Unknown Project";
+        const video = urlParams.get('video') || "";
+        const github = urlParams.get('github') || "#";
+
+        // Update content
+        document.getElementById('project-title').textContent = decodeURIComponent(title);
+        document.getElementById('video-source').src = decodeURIComponent(video);
+        document.getElementById('project-video').load();
+        document.getElementById('video-link').href = decodeURIComponent(video);
+        document.getElementById('github-link').href = decodeURIComponent(github);
+    </script>
+</body>
+</html>

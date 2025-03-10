@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Sakibul Hasan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+</head>
+<body>
+    <header class="main-header">
+        <div class="wrapper">
+            <div class="logo">
+                <i class="fa-solid fa-user"></i>
+                <div class="logo-text">Sakipoo Hasan</div>
+            </div>
+            <nav>
+                <ul class="navlinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="portfolio-wrapper">
+            <h2 class="portfolio-title">Portfolio</h2>
+            <p class="portfolio-subtitle">Here are some of the projects I have worked on:</p>
+    
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/port-1.png" alt="Project 1">
+                        <h3>Desiglam Fashion Hub</h3>
+                        <p>Desiglam is a platform for fashion creators and brands to effortlessly showcase and update their latest products. Easily upload collections, manage listings, and keep your audience engaged with the newest trends.</p>
+                        <a href="project_details.html?title=Project%201&video=videos/project1.mp4&github=hhttps://github.com/sakibul83/DesiGlam-Fashion" class="btn">View Project</a>
+                    </div>
+            
+                    <div class="swiper-slide">
+                        <img src="images/port-2.png" alt="Project 2">
+                        <h3>Healthcare-Guidance</h3>
+                        <p>Your trusted source for expert insights, patient stories, and essential healthcare information. Stay informed and empowered on your wellness journey.</p>
+                        <a href="project_details.html?title=Project%202&video=videos/project2.mp4&github=https://github.com/sakibul83/Chatbot_THI" class="btn">View Project</a>
+
+                    </div>
+            
+                    <div class="swiper-slide">
+                        <img src="images/port-3.png" alt="Project 3">
+                        <h3>THI Chatbot</h3>
+                        <p>Chatbot for Technische Hochschule Ingolstadt (THI), designed to answer university-related questions using Python, HTML, CSS, and JSON.</p>
+                        <a href="project_details.html?title=Project%203&video=videos/project3.mp4&github=https://github.com/sakibul83/Chatbot_THI" class="btn">View Project</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/port-4.png" alt="Project 3">
+                        <h3>Screen Break Reminder </h3>
+                        <p>A Python app that helps you manage screen time and take regular breaks for better productivity and health, featuring a tkinter interface and sound alerts with pygame.</p>
+                        <a href="project_details.html?title=Project%204&video=videos/project4.mp4&github=https://github.com/sakibul83/Chatbot_THI" class="btn">View Project</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/port-2.png" alt="Project 3">
+                        <h3>Project 5</h3>
+                        <p>Description of the project.</p>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/port-2.png" alt="Project 3">
+                        <h3>Project 6</h3>
+                        <p>Description of the project.</p>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+            
+                <!-- Navigation Buttons -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <br><br><br><br>
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+            
+        </div>
+    </main>
+    
+    
+
+    <footer>
+        <p>&copy; 2025 Sakibul Hasan. All rights reserved.</p>
+    </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".swiper-container", {
+        slidesPerView: 1,  // Show 1 slide at a time
+        spaceBetween: 20, 
+        loop: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        autoplay: {
+            delay: 2000, // Auto-slide every 3 seconds
+            disableOnInteraction: false,
+        },
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Sakibul Hasan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="wrapper">
+            <div class="logo">
+                <i class="fa-solid fa-user"></i>
+                <div class="logo-text">Sakibul Hasan</div>
+            </div>
+            <nav>
+                <ul class="navlinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="contact-main">
+        <div class="contact-wrapper">
+            <section class="contact-info">
+                <h2>Contact Details</h2>
+                <p>Feel free to reach out to me for any inquiries!</p>
+                <ul>
+                    <li><strong>Email:</strong> sakibulhasaann@gmail.com</li>
+                    <li><strong>Phone:</strong> +49-15560481219</li>
+                    <li><strong>Location:</strong> Ingolstadt,Germany</li>
+                </ul>
+            </section>
+
+            <section class="contact-form">
+                <h2>Send a Message</h2>
+                <form action="https://formspree.io/f/xvgzeknr" method="POST" onsubmit="submitForm(event)">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Your Name">
+
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="Your Email">
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required placeholder="Your Message"></textarea>
+
+                    <button type="submit">Submit</button>
+                </form>
+            </section>
+        </div>s
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Sakibul Hasan. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault(); // Prevent default form submission
+    
+            // Get form data
+            const form = event.target;
+            const formData = new FormData(form);
+    
+            // Send form data using fetch API
+            fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.ok) {
+                    alert("Message sent successfully!");
+                    form.reset(); // Clear form fields
+                } else {
+                    alert("Error sending message.");
+                }
+            })
+            .catch(error => alert("Error: " + error));
+        }
+    </script>
+    
+</body>
+</html>

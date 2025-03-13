@@ -1520,36 +1520,75 @@ footer {
     }
 }
 
+@media (max-width: 480px) {
+    .hobbies h3 {
+        font-size: 1.6rem; /* Further reduce font size for very small screens */
+        margin-bottom: 20px;
+    }
+
+    .hobby-list {
+        grid-template-columns: repeat(2, 1fr);  /* Stack hobbies in a single column */
+        gap: 10px;
+        padding: 0 5px; /* Adjust padding for very small screens */
+    }
+
+    .hobby-item {
+        width: 100%; /* Ensure hobby items take full width */
+        font-size: 0.9rem; /* Smaller text size */
+        padding: 15px;
+    }
+
+    .hobby-item i {
+        font-size: 2rem; /* Smaller icons for very small screens */
+    }
+}
+
 
 @media (max-width: 768px) {
     /* General Section Padding Adjustments */
-    .work-experience, .education, .certifications, .language-skills, .volunteering, .achievements{
+    .work-experience, .education, .certifications, .language-skills, .volunteering, .achievements {
         padding: 20px 15px; /* Uniform padding for all sections */
     }
-    .skill h2{
+
+    /* Skill Titles Font Adjustments */
+    .skill h2 {
         font-size: 1.4rem;
     }
+
     .hobbies h2 {
         font-size: 1.6rem;
-        
     }
+
     /* Adjusting font sizes for better readability */
-     .work-experience h2, .education h3, .certifications h2, .language-skills h2, .volunteering h2, .achievements h2 {
+    .work-experience h2, .education h3, .certifications h2, .language-skills h2, .volunteering h2, .achievements h2 {
         font-size: 1.6rem; /* Smaller font size for mobile */
     }
 
-    /* Skill Categories - Adjust Grid Layout */
+    /* Skills Section - Adjust Grid Layout */
     .skills-container {
-        grid-template-columns: repeat(2, 1fr); /* Two columns for mobile */
+        grid-template-columns: 1fr; /* Stack items vertically on very small screens */
+        padding: 0 10px; /* Adjust padding for smaller screens */
     }
 
-    /* Adjust Education Card Styling */
-    .edu-item {
-        padding: 15px 18px; /* Adjust padding */
-        margin: 10px 0;
+    .skills-container .skill-item {
+        width: 100%; /* Ensure no overflow */
+        margin-bottom: 15px; /* Space between items when stacked */
     }
-
     
+    /* Hobbies Section Adjustments */
+    .hobbies-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two columns for small screens */
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    .hobbies .hobby-item {
+        padding: 10px;
+        text-align: center;
+        background-color: #f4f4f9;
+        border-radius: 8px;
+    }
 
     /* Icons Adjustments */
     .skills h2::before, .certifications h2::before, .language-skills h2::before, .volunteering h2::before {
@@ -1565,9 +1604,22 @@ footer {
     .certifications .certificate {
         padding: 15px 18px; /* Reduced padding */
     }
+
+    /* Ensure no horizontal scroll on the body */
+    body {
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
 }
+@media (max-width: 480px) {
+    .skills-container {
+        grid-template-columns: 1fr; /* Stack items vertically on very small screens */
+        padding: 0 10px; /* Adjust padding for smaller screens */
+    }
 
-
+    .skills-container .skill-item {
+        margin-bottom: 15px; /* Space between stacked items */
+    }
+}
 
 
 
@@ -2007,26 +2059,168 @@ footer {
 }
 
 
+@media (max-width: 768px) {
+    /* Contact Wrapper - Change to single column */
+    .contact-wrapper {
+        grid-template-columns: 1fr; /* Single column layout on small screens */
+        padding: 0 20px; /* Add padding for better spacing */
+    }
+
+    /* Contact Info and Form - Adjust padding */
+    .contact-info, .contact-form {
+        padding: 20px; /* Reduce padding for smaller screens */
+    }
+
+    /* Section Headings - Adjust font size for mobile */
+    .contact-info h2,
+    .contact-form h2 {
+        font-size: 1.5rem; /* Slightly smaller font for mobile */
+    }
+
+    /* Contact Info list items - Adjust text size and padding */
+    .contact-info ul li {
+        font-size: 1rem; /* Smaller font size for mobile */
+        padding: 10px 14px; /* Adjust padding for mobile */
+    }
+
+    /* Contact Form Inputs - Adjust field size and padding */
+    .contact-form input,
+    .contact-form textarea {
+        padding: 10px;
+        margin-bottom: 1rem; /* Adjust margin to reduce vertical space */
+    }
+
+    /* Submit Button - Adjust button size */
+    .contact-form button {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    /* Adjust Swiper Container Images for Mobile */
+    .swiper-container {
+        max-width: 100%; /* Ensure the swiper takes full width on small screens */
+        padding-bottom: 20px; /* Adjust padding for better spacing */
+    }
+
+    .swiper-slide img {
+        max-width: 100%; /* Ensure images fit well on small screens */
+        height: auto;
+    }
+
+    /* Adjust text and buttons in swiper */
+    .swiper-slide h3 {
+        font-size: 1.2rem; /* Smaller text for mobile */
+    }
+
+    .swiper-slide p {
+        font-size: 0.9rem; /* Adjust font size */
+    }
+
+    .swiper-slide .btn {
+        padding: 6px 12px; /* Smaller button padding for mobile */
+        font-size: 0.9rem;
+    }
+
+    /* Ensure navigation buttons in swiper are accessible */
+    .swiper-button-next, .swiper-button-prev {
+        padding: 8px; /* Adjust button padding */
+        width: 35px; /* Reduce button size */
+        height: 35px;
+    }
+
+    .swiper-pagination {
+        bottom: 5px; /* Adjust pagination position */
+    }
+}
 
 
+@media (max-width: 468px) {
 
+    /* Wrapper adjustments */
+    .contact-wrapper {
+        width: 100%; /* Ensure content spans full width */
+        padding: 0 10px; /* Add padding to avoid content touching screen edges */
+    }
 
+    /* Form and Contact Info - Adjust padding */
+    .contact-info, .contact-form {
+        padding: 15px; /* Reduced padding for smaller screens */
+    }
 
+    /* Contact Form Inputs - Adjust field size and padding */
+    .contact-form input,
+    .contact-form textarea {
+        padding: 8px; /* Smaller padding for inputs */
+        font-size: 0.85rem; /* Smaller font size */
+    }
 
+    /* Submit Button - Adjust size */
+    .contact-form button {
+        font-size: 0.9rem; /* Smaller font for mobile */
+        padding: 8px 12px; /* Adjust button padding */
+    }
 
+    /* Section Headings */
+    .contact-info h2,
+    .contact-form h2 {
+        font-size: 1.3rem; /* Adjust heading size for mobile */
+    }
 
+    /* Contact Info list items - Adjust font size and padding */
+    .contact-info ul li {
+        font-size: 0.9rem; /* Smaller font size */
+        padding: 8px 10px; /* Adjust padding */
+    }
 
+    /* Contact Info List Icons - Adjust icon size */
+    .contact-info ul li i {
+        font-size: 1.1rem; /* Smaller icon size */
+        margin-right: 8px; /* Reduce space between icon and text */
+    }
 
+    /* Ensure inputs and buttons do not overflow */
+    .contact-form input, 
+    .contact-form textarea, 
+    .contact-form button {
+        max-width: 100%; /* Prevent overflow */
+    }
 
+    /* Adjust Swiper Container Images for Mobile */
+    .swiper-container {
+        max-width: 100%;
+        padding-bottom: 15px; /* Adjust padding */
+    }
 
+    .swiper-slide img {
+        max-width: 100%; /* Ensure images scale to container */
+        height: auto;
+    }
 
+    /* Adjust text and buttons in swiper */
+    .swiper-slide h3 {
+        font-size: 1.1rem; /* Smaller text for mobile */
+    }
 
+    .swiper-slide p {
+        font-size: 0.9rem; /* Adjust font size */
+    }
 
+    .swiper-slide .btn {
+        padding: 6px 12px; /* Adjust button padding for small screens */
+        font-size: 0.9rem;
+    }
 
+    /* Ensure navigation buttons in swiper are accessible */
+    .swiper-button-next, .swiper-button-prev {
+        padding: 6px; /* Smaller button size */
+        width: 30px; /* Reduce size */
+        height: 30px;
+    }
 
-
-
-
+    .swiper-pagination {
+        bottom: 5px; /* Adjust pagination position */
+    }
+}
 
 
 

@@ -16,18 +16,26 @@
                 <i class="fa-solid fa-user"></i>
                 <div class="logo-text">Sakibul Hasan</div>
             </div>
-            <nav>
+            <nav id="navbar">
                 <ul class="navlinks">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="skills.html">Skills</a></li>
-                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <!-- Close Button (in small screens) -->
+                    <div id="close" class="close-btn">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
                 </ul>
             </nav>
+
+            <!-- Hamburger Icon -->
+            <div id="hamburger" class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
         </div>
     </header>
-
     <section class="blog">
         <!-- Scholarship Section -->
         <div class="blog-section">
@@ -39,9 +47,9 @@
                 <div class="slider-container">
                     <div class="slider">
                         <div class="slider-images">
-                            <img src="images/scho-1.JPG" alt="Scholarship Event 1">
-                            <img src="images/scho-2.heic" alt="Scholarship Event 2">
-                            <img src="images/scho-3.HEIC" alt="Scholarship Event 3">
+                            <img src="Images/scho-1.JPG" alt="Scholarship Event 1">
+                            <img src="Images/scho-2.heic" alt="Scholarship Event 2">
+                            <img src="Images/scho-3.HEIC" alt="Scholarship Event 3">
                         </div>
                         <button class="slider-btn prev" onclick="moveSlide(-1)">&#10094;</button>
                         <button class="slider-btn next" onclick="moveSlide(1)">&#10095;</button>
@@ -70,9 +78,9 @@
                 <div class="slider-container">
                     <div class="slider">
                         <div class="slider-images">
-                            <img src="images/aus-1.heic" alt="Austria Event 1">
-                            <img src="images/aus-2.jpg" alt="Austria Event 2">
-                            <img src="images/aus-23.jpg" alt="Austria Event 3">
+                            <img src="Images/aus-1.heic" alt="Austria Event 1">
+                            <img src="Images/aus-2.jpg" alt="Austria Event 2">
+                            <img src="Images/aus-23.jpg" alt="Austria Event 3">
                         </div>
                         <button class="slider-btn prev" onclick="moveSlide(-1)">&#10094;</button>
                         <button class="slider-btn next" onclick="moveSlide(1)">&#10095;</button>
@@ -157,6 +165,21 @@
     
         // Initialize Pagination
         showPage(currentPage);
+
+        const navLinks = document.querySelector('.navlinks');
+        const hamburger = document.querySelector('.hamburger');
+        const closeBtn = document.querySelector('.close-btn');
+
+    hamburger.addEventListener('click', () => {
+    navLinks.classList.add('active');
+    document.body.classList.add('nav-open'); // Add class to body
+        });
+
+    closeBtn.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    document.body.classList.remove('nav-open'); // Remove class from body
+        });
+
     </script>
     
 

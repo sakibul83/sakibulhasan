@@ -16,15 +16,24 @@
                 <i class="fa-solid fa-user"></i>
                 <div class="logo-text">Sakibul Hasan</div>
             </div>
-            <nav>
+            <nav id="navbar">
                 <ul class="navlinks">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="skills.html">Skills</a></li>
                     <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <!-- Close Button (in small screens) -->
+                    <div id="close" class="close-btn">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
                 </ul>
             </nav>
+
+            <!-- Hamburger Icon -->
+            <div id="hamburger" class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
         </div>
     </header>
 
@@ -87,6 +96,21 @@
             })
             .catch(error => alert("Error: " + error));
         }
+
+        const navLinks = document.querySelector('.navlinks');
+        const hamburger = document.querySelector('.hamburger');
+        const closeBtn = document.querySelector('.close-btn');
+
+    hamburger.addEventListener('click', () => {
+    navLinks.classList.add('active');
+    document.body.classList.add('nav-open'); // Add class to body
+        });
+
+    closeBtn.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    document.body.classList.remove('nav-open'); // Remove class from body
+        });
+
     </script>
     
 </body>

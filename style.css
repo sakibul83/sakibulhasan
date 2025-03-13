@@ -73,6 +73,14 @@ footer {
     
 }
 
+.hamburger {
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+
 /* Navigation */
 .navlinks {
     list-style: none;
@@ -83,6 +91,9 @@ footer {
     justify-content: flex-end; /* Aligns nav items to the right */
     flex: 2; /* Ensures the nav links take the right side space */
     padding-right: 0; /* Removes padding */
+}
+.navlinks.active {
+    right: 0;
 }
 
 /* Navigation Links */
@@ -97,6 +108,46 @@ footer {
 
 .navlinks li a:hover {
     color: #00c6ff;
+}
+
+
+@media (max-width: 768px) {
+    .navlinks {
+        position: fixed;
+        top: 0;
+        bottom: 0; /* Ensure it stretches to the full height */
+        right: -100%; /* Start hidden offscreen */
+        width: 180px;
+        background-color: rgba(0, 0, 0, 0.95); /* Slightly darker for better visibility */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Align links to the left */
+        justify-content: flex-start; /* Align content at the top */
+        padding: 60px 20px;
+        transition: right 0.3s ease;
+        z-index: 1200; /* Ensure it's on top of other elements */
+    }
+
+
+    .navlinks.active {
+        right: 0;
+    }
+
+
+    .hamburger {
+        display: block;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        z-index: 1300;
+    }
+    
 }
 
 /* Hero Section */
@@ -188,6 +239,102 @@ footer {
     color: white;
 }
 
+
+
+@media (max-width: 758px) {
+    .hero-header {
+        background: linear-gradient(135deg, #1f1f1f, #007ced); /* Gradient background */
+        padding: 100px 16px 40px 16px; /* Adjust padding for smaller screens */
+        color: #fff;
+        animation: fadeIn 2s ease-in-out;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    /* Hero Content Styling */
+    .hero-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        text-align: center;
+    }
+
+    /* Hero Image Styling */
+    .hero-pic {
+        width: 240px; /* Slightly smaller for mobile */
+        height: 240px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 5px solid #fff;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        animation: bounceIn 1.5s ease-in-out;
+        margin-bottom: 16px;
+    }
+
+    /* Hero Image inside .hero-pic */
+    .hero-pic img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Hover effect for the image */
+    .hero-pic:hover {
+        transform: scale(1.03);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Hero Text Styling */
+    .hero-text {
+        max-width: 400px;
+        margin: 1rem auto;
+        animation: fadeInText 1.2s ease-in-out;
+    }
+
+    .hero-text .dynamic-text {
+        color: #00c6ff;
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+
+    /* Buttons Styling */
+    .btn-group {
+        display: flex;
+        justify-content: center;
+        gap: 0.6rem;
+        margin-top: 1.2rem;
+    }
+
+    .btn-group .btn {
+        padding: 8px 14px;
+        background: #fff;
+        color: #007ced;
+        border: 2px solid #007ced;
+        border-radius: 20px;
+        text-transform: uppercase;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: inline-block;
+        font-size: 0.85rem;
+    }
+
+    .btn-group .btn:hover {
+        background: #007ced;
+        color: white;
+    }
+}
+
+
+
+
 /* Social Icons Container */
 .social-bar {
     position: fixed; /* Fixed position on the right */
@@ -225,6 +372,23 @@ footer {
 }
 
 
+/* Adjust for Mobile Screens */
+@media (max-width: 768px) {
+    .social-bar {
+        right: 10px; /* Keep icons away from screen edge */
+        top: 60%; /* Lower icons for better visibility */
+    }
+
+    .social-bar a {
+        font-size: 24px; /* Smaller icons for mobile */
+        margin-bottom: 12px;
+    }
+    
+
+    body.nav-open .social-bar {
+        display: none;
+    }
+}
 
 
 /* Animations */
@@ -401,7 +565,52 @@ footer {
 }
 
 
+/* responsicve for the portfoloio */
 
+
+@media only screen and (max-width: 758px) {
+
+    .portfolio-wrapper {
+        padding-top: 100px; /* Increased spacing from the header */
+        text-align: center;
+    }
+  
+    /* === Portfolio Title & Subtitle - Centered & Styled === */
+    .portfolio-title {
+        font-size: 2rem; /* Adjusted for mobile */
+    }
+  
+    .portfolio-subtitle {
+        font-size: 1.2rem; /* Adjusted for mobile */
+    }
+  
+    /* === Portfolio Grid - Larger and More Spacious === */
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted min size for mobile */
+        gap: 20px; /* Less space between items for mobile */
+        padding: 20px; /* Reduced padding */
+        max-width: 100%; /* Full width for smaller screens */
+    }
+  
+    /* === Portfolio Items - Modern Look === */
+    .portfolio-item {
+        padding: 20px; /* Reduced padding */
+        border-radius: 10px; /* Reduced border radius */
+    }
+  
+    /* === Portfolio Images - Bigger & Styled === */
+    .portfolio-item img {
+        max-height: 200px; /* Adjusted image size for mobile */
+    }
+  
+    /* === View Project Button - Styled & Animated === */
+    .btn {
+        padding: 10px 18px; /* Adjusted padding for mobile */
+    }
+  
+  }
+
+  
 
 /* === Skills Section === */
 .skills {
@@ -576,12 +785,7 @@ footer {
     background-color: #95a5a6; /* Subtle change to a muted gray on hover */
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .skills-container {
-        grid-template-columns: 1fr; /* Stack skills in one column on smaller screens */
-    }
-}
+
 
 .work-experience {
     padding: 40px;
@@ -994,6 +1198,8 @@ footer {
 }
 
 
+
+
 .language-skills h3 {
     color: #1e88e5;
     font-size: 2rem;
@@ -1311,18 +1517,54 @@ footer {
     }
 }
 
-/* Responsive Layout for Hobby Items */
+
 @media (max-width: 768px) {
-    .hobby-item {
-        width: 45%; /* Two items per row on medium-sized screens */
+    /* General Section Padding Adjustments */
+    .work-experience, .education, .certifications, .language-skills, .volunteering, .achievements{
+        padding: 20px 15px; /* Uniform padding for all sections */
+    }
+    .skill h2{
+        font-size: 1.4rem;
+    }
+    .hobbies h2 {
+        font-size: 1.6rem;
+        
+    }
+    /* Adjusting font sizes for better readability */
+     .work-experience h2, .education h3, .certifications h2, .language-skills h2, .volunteering h2, .achievements h2 {
+        font-size: 1.6rem; /* Smaller font size for mobile */
+    }
+
+    /* Skill Categories - Adjust Grid Layout */
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for mobile */
+    }
+
+    /* Adjust Education Card Styling */
+    .edu-item {
+        padding: 15px 18px; /* Adjust padding */
+        margin: 10px 0;
+    }
+
+    
+
+    /* Icons Adjustments */
+    .skills h2::before, .certifications h2::before, .language-skills h2::before, .volunteering h2::before {
+        font-size: 1.8rem; /* Smaller icon size */
+    }
+
+    /* Adjust the Timeline Items for Work Experience */
+    .work-experience .timeline-item {
+        padding: 15px 18px; /* Adjusted padding */
+    }
+
+    /* Responsiveness for the Certification Section */
+    .certifications .certificate {
+        padding: 15px 18px; /* Reduced padding */
     }
 }
 
-@media (max-width: 480px) {
-    .hobby-item {
-        width: 80%; /* One item per row on small screens */
-    }
-}
+
 
 
 
@@ -1462,6 +1704,52 @@ footer {
 
 
 
+@media (max-width: 768px) {
+    .blog {
+        padding: 20px 10%; /* Reduced padding for mobile */
+    }
+
+    /* Blog Content - Change to a Column Layout */
+    .blog-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px; /* Reduced gap between elements */
+    }
+
+    .blog-text {
+        width: 100%; /* Full width for mobile */
+    }
+
+    /* Adjusting Text and Image */
+    .blog-description {
+        font-size: 1rem; /* Smaller description font for mobile */
+    }
+
+    .blog-details {
+        font-size: 0.9rem; /* Slightly smaller text for mobile */
+        margin-bottom: 15px; /* Reduced margin on mobile */
+    }
+
+    .quote {
+        font-size: 1rem; /* Slightly smaller quote text */
+    }
+
+    /* Adjusting Slider Image Size */
+    .slider-container {
+        width: 100%;
+    }
+
+    .slider-images img {
+        height: 250px; /* Reduced height for images on mobile */
+        object-fit: cover;
+    }
+
+    /* Adjust Slider Buttons for Mobile */
+    .slider-btn {
+        font-size: 1.5rem; /* Smaller buttons for mobile */
+        padding: 8px;
+    }
+}
 
 
 
@@ -1714,3 +2002,29 @@ footer {
     font-weight: bold;
     margin: 0 10px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

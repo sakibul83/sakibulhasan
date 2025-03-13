@@ -15,6 +15,9 @@ body {
     display: flex;
     flex-direction: column; /* Align elements vertically */
 }
+html{
+    overflow-x: hidden; 
+}
 
 /* Ensure body takes full height and pushes footer to bottom */
 main {

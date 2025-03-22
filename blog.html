@@ -36,31 +36,31 @@
             </div>
         </div>
     </header>
+
     <section class="blog">
         <!-- Scholarship Section -->
         <div class="blog-section">
-            <h2 class="section-title">🎓 My Scholarship Journey</h2>
+            <h2 class="section-title" >🎓 My Scholarship Journey</h2>
             <p class="blog-description">I am honored to have been selected for the Deutschlandstipendium Scholarship! This scholarship has been a key milestone in my academic career, and I want to share my journey with you.</p>
-    
+        
             <div class="blog-content">
                 <!-- Image Slider Section -->
-                <div class="slider-container">
-                    <div class="slider">
-                        <div class="slider-images">
-                            <img src="images/scho-1.JPG" alt="Scholarship Event 1">
-                            <img src="images/scho-2.heic" alt="Scholarship Event 2">
-                            <img src="images/scho-3.HEIC" alt="Scholarship Event 3">
-                        </div>
-                        <button class="slider-btn prev" onclick="moveSlide(-1)">&#10094;</button>
-                        <button class="slider-btn next" onclick="moveSlide(1)">&#10095;</button>
+                <div class="slider-container" data-slider="scholarship">
+                    <div class="slider-images">
+                        <img src="Images/scho-1.JPG" alt="Scholarship Event 1">
+                        <img src="Images/scho-2.heic" alt="Scholarship Event 2">
+                        <img src="Images/scho-3.HEIC" alt="Scholarship Event 3">
                     </div>
+                    <button class="slider-btn prev" onclick="moveSlide('scholarship', -1)">&#10094;</button>
+                    <button class="slider-btn next" onclick="moveSlide('scholarship', 1)">&#10095;</button>
                 </div>
-    
+        
+                <!-- Text Section -->
                 <div class="blog-text">
-                    <p class="blog-details">It was a thrilling moment when I received the news about my scholarship approval from the Technical University of Ingolstadt. This monthly scholarship of €300.00 will help me focus more on my studies and less on financial worries. It also serves as a constant reminder that hard work and determination pay off. In this post, I’ll walk you through my scholarship journey and how it’s influencing my academic goals.</p>
+                    <p class="blog-details">It was a thrilling moment when I received the news about my scholarship approval from the Technical University of Ingolstadt...</p>
                 </div>
             </div>
-    
+        
             <p class="quote">“This scholarship isn’t just financial support, but also an affirmation of my commitment to my studies.”</p>
         </div>
     
@@ -71,100 +71,162 @@
     
             <div class="blog-content">
                 <div class="blog-text">
-                    <p class="blog-details">In the summer of 2024, I flew to Austria to participate in an academic event where I learned the latest trends in Artificial Intelligence, Robotics, and IoT. It was an unforgettable experience—meeting like-minded people from all around the world, engaging in workshops, and attending lectures from experts. This post captures my journey through this life-changing event, how it shaped my career goals, and the cultural experiences that came with it.</p>
+                    <p class="blog-details">In the summer of 2024, I flew to Austria to participate in an academic event where I learned the latest trends in Artificial Intelligence...</p>
                 </div>
     
                 <!-- Image Slider Section for Austria -->
-                <div class="slider-container">
-                    <div class="slider">
-                        <div class="slider-images">
-                            <img src="images/aus-1.heic" alt="Austria Event 1">
-                            <img src="images/aus-2.jpg" alt="Austria Event 2">
-                            <img src="images/aus-23.jpg" alt="Austria Event 3">
-                        </div>
-                        <button class="slider-btn prev" onclick="moveSlide(-1)">&#10094;</button>
-                        <button class="slider-btn next" onclick="moveSlide(1)">&#10095;</button>
+                <div class="slider-container" data-slider="austria">
+                    <div class="slider-images">
+                        <img src="Images/aus-1.heic" alt="Austria Event 1">
+                        <img src="Images/aus-2.jpg" alt="Austria Event 2">
+                        <img src="Images/aus-23.jpg" alt="Austria Event 3">
                     </div>
+                    <button class="slider-btn prev" onclick="moveSlide('austria', -1)">&#10094;</button>
+                    <button class="slider-btn next" onclick="moveSlide('austria', 1)">&#10095;</button>
                 </div>
             </div>
     
             <p class="quote">“Austria wasn’t just a trip—it was a milestone in my academic journey.”</p>
         </div>
+
     </section>
 
+    <section class="blog">
+        <!-- India Tour Section -->
+        <div class="blog-section">
+            <h2 class="section-title">🇮🇳 My Incredible India Tour</h2>
+            <p class="blog-description">
+                From the colorful chaos of local markets to the serene shikara rides on Dal Lake, my journey across India was nothing short of magical. This trip blended adventure, culture, and unforgettable landscapes, leaving me with lifelong memories.
+            </p>
+    
+            <div class="blog-content">
+                <div class="blog-text">
+                    <h3>📍 Delhi – The Historical Marvel</h3>
+                    <p class="blog-details">
+                        The capital city welcomed me with its rich history and vibrant energy. Exploring iconic landmarks like the **India Gate** and **Qutub Minar** felt like stepping into the pages of history.
+                    </p>
+    
+                    <h3>📍 Kashmir – The Paradise on Earth</h3>
+                    <p class="blog-details">
+                        Embarked on the breathtaking journey to **Sonamarg's second phase at 12,000 ft**. The high altitude made each breath a challenge, but the views were beyond rewarding. From **shikara rides on Dal Lake** to snow-capped mountain treks, Kashmir was a dream come true. 🏔️❄️
+                    </p>
+    
+                    <h3>📍 Kolkata – The Cultural Heartbeat</h3>
+                    <p class="blog-details">
+                        Walking through the lively streets of Kolkata, I felt the pulse of India’s deep-rooted traditions. **Victoria Memorial, Howrah Bridge, and the bustling New Market** made this city a cultural delight.
+                    </p>
+    
+                    <h3>📍 More Adventures Await!</h3>
+                    <p class="blog-details">
+                        Every turn in India had something new to offer—breathtaking landscapes, mouthwatering street food, and interactions with amazing locals. From the **spiritual aura of Varanasi** to the **majestic forts of Rajasthan**, this trip was an endless adventure.
+                    </p>
+                </div>
+    
+                <!-- Image Slider for India Tour -->
+                <div class="slider-container" data-slider="india">
+                    <div class="slider-images">
+                        <img src="images/india1.jpg" alt="Delhi - India Gate">
+                        <img src="images/india2.jpg" alt="Kashmir - Dal Lake">
+                        <img src="Images/india4.jpg" alt="Sonamarg - Snow Trek">
+                        <img src="Images/india3.jpg" alt="Kolkata - Howrah Bridge">
+                    </div>
+                    <button class="slider-btn prev" onclick="moveSlide('india', -1)">&#10094;</button>
+                    <button class="slider-btn next" onclick="moveSlide('india', 1)">&#10095;</button>
+                </div>
+            </div>
+    
+            <p class="quote">“This journey was more than just a trip—it was an experience of a lifetime.”</p>
+        </div>
+    
+    </section>
+    
+    
+
+   
     <div class="pagination-container">
         <button id="prev-page" onclick="changePage(-1)">« Previous</button>
         <span id="page-numbers"></span>
         <button id="next-page" onclick="changePage(1)">Next »</button>
     </div>
     
-    <!-- Script for Image Slider -->
+    
+
+
+
+
+
     <script>
-        let slideIndex = 0;
+        // Track slide index for each slider (Added "india" slider)
+let slideIndexes = {
+    scholarship: 0,
+    austria: 0,
+    india: 0
+};
+
+// Function to move slides for each slider
+function moveSlide(sliderName, n) {
+    const slider = document.querySelector(`[data-slider="${sliderName}"] .slider-images`);
+    const slides = document.querySelectorAll(`[data-slider="${sliderName}"] .slider-images img`);
+    const totalSlides = slides.length;
     
-        function moveSlide(n) {
-            let slides = document.querySelectorAll('.slider-images img');
-            let totalSlides = slides.length;
-            let slider = document.querySelector('.slider-images');
-            let slideWidth = slides[0].clientWidth;
-    
-            slideIndex += n;
-    
-            // **Loop the slides seamlessly**
-            if (slideIndex >= totalSlides) {
-                slideIndex = 0; // Go back to first
-            } else if (slideIndex < 0) {
-                slideIndex = totalSlides - 1; // Go to last slide
-            }
-    
-            // Apply transition smoothly
-            slider.style.transition = "transform 0.5s ease-in-out";
-            slider.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
+    if (!slider || slides.length === 0) return; // Prevent errors if no images
+
+    const slideWidth = slides[0].clientWidth;
+    slideIndexes[sliderName] += n;
+
+    // Loop the slides seamlessly
+    if (slideIndexes[sliderName] >= totalSlides) {
+        slideIndexes[sliderName] = 0;
+    } else if (slideIndexes[sliderName] < 0) {
+        slideIndexes[sliderName] = totalSlides - 1;
+    }
+
+    slider.style.transition = "transform 0.5s ease-in-out";
+    slider.style.transform = `translateX(-${slideIndexes[sliderName] * slideWidth}px)`;
+}
+
+// Ensure slides adjust dynamically on window resize
+window.addEventListener("resize", () => {
+    Object.keys(slideIndexes).forEach(sliderName => {
+        const slider = document.querySelector(`[data-slider="${sliderName}"] .slider-images`);
+        if (slider) {
+            const slideWidth = document.querySelector(`[data-slider="${sliderName}"] .slider-images img`).clientWidth;
+            slider.style.transform = `translateX(-${slideIndexes[sliderName] * slideWidth}px)`;
         }
-    
-        // Ensure slides adjust dynamically on window resize
-        window.addEventListener("resize", () => {
-            let slider = document.querySelector('.slider-images');
-            let slideWidth = document.querySelector('.slider-images img').clientWidth;
-            slider.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
-        });
-    </script>
-    
-    
-    <footer>
-        <p>&copy; 2025 Sakibul Hasan. All rights reserved.</p>
-    </footer>
-    <script>
+    });
+});
+
+
+        // Pagination Logic
         let currentPage = 1;
-        const postsPerPage = 1; // Adjust this value as needed
+        const postsPerPage = 2; // Set 2 posts per page
         const blogSections = document.querySelectorAll('.blog-section');
         const totalPages = Math.ceil(blogSections.length / postsPerPage);
-    
+
+        // Function to display the correct page
         function showPage(page) {
-            // Hide all blog sections
             blogSections.forEach((section, index) => {
                 section.style.display = (index >= (page - 1) * postsPerPage && index < page * postsPerPage) 
                     ? 'block' 
                     : 'none';
             });
-    
-            // Update page numbers
+
             document.getElementById('page-numbers').textContent = `Page ${page} of ${totalPages}`;
-    
-            // Enable/disable buttons
             document.getElementById('prev-page').disabled = (page === 1);
             document.getElementById('next-page').disabled = (page === totalPages);
         }
-    
+
+        // Function to change pages
         function changePage(step) {
             if ((currentPage + step) > 0 && (currentPage + step) <= totalPages) {
                 currentPage += step;
                 showPage(currentPage);
             }
         }
-    
+
         // Initialize Pagination
         showPage(currentPage);
+
 
         const navLinks = document.querySelector('.navlinks');
         const hamburger = document.querySelector('.hamburger');
@@ -179,10 +241,13 @@
     navLinks.classList.remove('active');
     document.body.classList.remove('nav-open'); // Remove class from body
         });
+        
 
     </script>
     
+    <footer>
+        <p>&copy; 2025 Sakibul Hasan. All rights reserved.</p>
+    </footer>
 
-   
 </body>
 </html>

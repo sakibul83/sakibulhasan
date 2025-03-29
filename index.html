@@ -70,7 +70,138 @@
             <i class="fa-brands fa-facebook"></i>
         </a>
     </div>
+
+
+    <a href="skills.html">
+        <h2>My Skills</h2>
+    </a>
+    
+    <div class="skills-container">
+        <!-- Programming Languages -->
+        <div class="skill-category">
+            <h3><i class="fas fa-laptop-code"></i> Programming Languages</h3>
+            <div class="skill">
+                <span>C, C++, Java, Python</span>
+                <div class="progress"><div class="bar" style="width: 90%;"></div></div>
+            </div>
+            <div class="skill">
+                <span>HTML5, CSS3, JavaScript</span>
+                <div class="progress"><div class="bar" style="width: 95%;"></div></div>
+            </div>
+            <div class="skill">
+                <span>JQuery, React.js</span>
+                <div class="progress"><div class="bar" style="width: 85%;"></div></div>
+            </div>
+        </div>
+
+        <!-- Web Development -->
+        <div class="skill-category">
+            <h3><i class="fas fa-paint-brush"></i> Web Development</h3>
+            <div class="skill">
+                <span>Front-End Development</span>
+                <div class="progress"><div class="bar" style="width: 95%;"></div></div>
+            </div>
+            <div class="skill">
+                <span>UI/UX Design</span>
+                <div class="progress"><div class="bar" style="width: 80%;"></div></div>
+            </div>
+            <div class="skill">
+                <span>Responsive Web Design</span>
+                <div class="progress"><div class="bar" style="width: 90%;"></div></div>
+            </div>
+        </div>
+
+        <!-- Tools & Technologies -->
+        <div class="skill-category">
+            <h3><i class="fas fa-tools"></i> Tools & Technologies</h3>
+            <div class="skill">
+                <span>Git, GitHub</span>
+                <div class="progress"><div class="bar" style="width: 85%;"></div></div>
+            </div>
+            <div class="skill">
+                <span>Firebase, MySQL</span>
+                <div class="progress"><div class="bar" style="width: 80%;"></div></div>
+            </div>
+            <div class="skill">
+                <span>Microsoft Office</span>
+                <div class="progress"><div class="bar" style="width: 90%;"></div></div>
+            </div>
+        </div>
+
+        <!-- Multimedia Skills -->
+        <div class="skill-category">
+            <h3><i class="fas fa-camera"></i> Multimedia Skills</h3>
+            <div class="skill">
+                <span>Photography 📸</span>
+                <div class="progress"><div class="bar" style="width: 75%;"></div></div>
+            </div>
+            <div class="skill">
+                <span>Video Editing 🎞️</span>
+                <div class="progress"><div class="bar" style="width: 85%;"></div></div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="vlog-title">My Professional Journey</h2>
+    <p class="vlog-subtitle">Discover the projects I’ve worked on and the skills I’ve built.
+         From web development to software engineering and mobile apps, I’ve explored various 
+         fields of technology. Join me as I continue learning and building, creating solutions that 
+         make a difference.</p>
+    <div class="vlog-grid">
+        <div class="vlog-card">
+            <div class="vlog-content">
+                <h3>Web Development</h3>
+                <p>Creating responsive and user-friendly websites using HTML, CSS, JavaScript, and modern frameworks.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+        </div>
+        <div class="vlog-card">
+            <div class="vlog-content">
+                <h3>Software Engineering</h3>
+                <p>Developing efficient and scalable software applications using various programming languages.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+        </div>
+        <div class="vlog-card">
+            <div class="vlog-content">
+                <h3>Mobile App Development</h3>
+                <p>Building intuitive mobile applications for iOS and Android with a focus on seamless user experience.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+        </div>
+    </div>
+
+
+   <!-- Subscribe Section -->
+<!-- Newsletter Section -->
+<div class="newsletter">
+    <h2 class="newsletter-title">Never Miss an Update!</h2>
+    <p class="newsletter-text">
+        Get the latest insights, updates, and exclusive content delivered straight to your inbox.
+    </p>
+
+    <form class="newsletter-form" id="newsletterForm" action="https://formspree.io/f/mpwpjjrv" method="POST">
+        <input type="email" name="email" id="newsletterEmail" placeholder="Enter your email..." required>
+        <button type="submit">Subscribe</button>
+    </form>
+
+    <!-- Success/Error Message -->
+    <p class="subscribe-message" id="subscribeMessage"></p>
+
+    <p class="newsletter-note">No spam, just valuable content. Unsubscribe anytime.</p>
+</div>
+
+
+
+
+
+
+
 </section>
+
+
+
+
 
 
 
@@ -104,6 +235,47 @@
     navLinks.classList.remove('active');
     document.body.classList.remove('nav-open'); // Remove class from body
         });
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("newsletterForm").addEventListener("submit", async function (event) {
+        event.preventDefault(); // Stop default form submission
+
+        let form = event.target;
+        let message = document.getElementById("subscribeMessage");
+        let emailInput = document.getElementById("newsletterEmail");
+
+        let formData = new FormData(form);
+
+        try {
+            let response = await fetch(form.action, {
+                method: "POST",
+                body: formData,
+                headers: { "Accept": "application/json" }
+            });
+
+            if (response.ok) {
+                message.textContent = "✅ Subscription successful! Check your email.";
+                message.style.color = "#00ff99"; // Green
+                emailInput.value = ""; // Clear input
+            } else {
+                message.textContent = "⚠️ Something went wrong. Try again.";
+                message.style.color = "#ff4444"; // Red
+            }
+        } catch (error) {
+            message.textContent = "⚠️ Error connecting to the server.";
+            message.style.color = "#ff4444";
+        }
+
+        message.style.opacity = "1"; // Show message
+        setTimeout(() => { message.style.opacity = "0"; }, 4000); // Hide after 4 sec
+    });
+});
+
+
+   
+        
     </script>
 </body>
 </html>

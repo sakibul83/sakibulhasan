@@ -13,6 +13,7 @@ body {
     min-height: 100vh;   /* Ensure body fills at least the viewport height */
     display: flex;
     flex-direction: column; /* Align elements vertically */
+    
 }
 html {
     overflow-x: hidden; 
@@ -142,6 +143,41 @@ footer {
         cursor: pointer;
         z-index: 1300;
     }
+}
+
+.main-content{
+    background: linear-gradient(135deg, #1f1f1f, #007ced);  /* Gradient background */
+    padding: 120px 20px 60px 20px; /* Extra padding for spacing */
+    color: #fff;
+}
+.main-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-align: center;
+    color: #ffffff;
+    background: linear-gradient(90deg, #007bff, #00c6ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin: 20px auto;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer; /* Makes it clear that it's clickable */
+    text-decoration: none; /* Remove underline */
+}
+
+.main-content a {
+    text-decoration: none; /* Ensures no default underline */
+}
+
+.main-content h2:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
 }
 
 /* About Me Section */
@@ -313,6 +349,291 @@ footer {
 
 
 
+
+/* Vlog Section */
+.vlog-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: #121212; /* Dark background for better contrast */
+    color: #f0f0f0; /* Light text color */
+    border-bottom: 3px solid #444; /* Soft bottom border */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6); /* Subtle shadow */
+}
+
+/* Vlog Title */
+.vlog-title {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #9e8cfd; /* Elegant purple for title */
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); /* Soft text shadow */
+}
+
+/* Vlog Subtitle */
+.vlog-subtitle {
+    font-size: 1.3rem;
+    color: #ceb4d6; /* Softer gray for subtitle */
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+/* Vlog Grid Layout */
+.vlog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    padding: 30px;
+    max-width: 1300px;
+    margin: auto;
+}
+
+/* Vlog Card Styling */
+/* Vlog Card Styling */
+.vlog-card {
+    position: relative;
+    background : rgba(255, 255, 255, 0.08); /* Slightly off-white for card */
+    background-color: #2d46843f;
+    backdrop-filter: blur(8px); /* Subtle blur */
+    border-radius: 12px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Make space between content and button */
+    height: 350px; /* Set a fixed height for consistency */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4); /* Subtle card shadow */
+}
+
+/* Align button at the bottom of the card */
+.vlog-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space between description and button */
+    flex-grow: 1; /* Allow content to fill the space */
+}
+
+/* Card Heading */
+.vlog-content h3 {
+    margin-bottom: 20px; /* Add margin to separate from text */
+    font-size: 1.7rem;
+    color: #b174ae;
+    font-weight: 700;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+
+/* Card Paragraph */
+.vlog-content p {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+
+.vlog-content .btn {
+    align-self: center; 
+    margin-top: auto; 
+    padding: 12px 18px;
+    background: #acaab7;
+    color: white;
+    border-radius: 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease-in-out;
+    font-size: 1.1rem;
+}
+
+
+.vlog-content .btn {
+    margin-top: 15px; 
+    align-self: center; 
+}
+
+
+/* Hover Effect */
+.vlog-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 12px 40px rgba(0, 198, 255, 0.4); 
+    background: rgba(0, 198, 255, 0.05);
+}
+
+/* Glow Effect */
+.vlog-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(0, 198, 255, 0.1), rgba(255, 255, 255, 0.05)); /* Soft glowing effect */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.vlog-card:hover::before {
+    opacity: 1;
+}
+
+
+
+.btn:hover {
+    background: #45782a; /* Slightly darker shade on hover */
+    transform: translateY(-5px); /* Button lift effect */
+}
+
+
+.vlog-section {
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .vlog-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* More compact on small screens */
+    }
+    .vlog-title {
+        font-size: 2rem;
+    }
+    .vlog-subtitle {
+        font-size: 1.1rem;
+    }
+    .vlog-content h3 {
+        font-size: 1.3rem;
+    }
+    .vlog-content p {
+        font-size: 0.95rem;
+    }
+    .vlog-content .btn {
+        font-size: 0.95rem;
+        padding: 10px 16px;
+    }
+}
+
+/* Newsletter Section */
+.newsletter {
+    text-align: center;
+    padding: 60px 20px;
+    background: none; /* No harsh sections, seamless integration */
+    color: #f5f5f5;
+    max-width: 800px;
+    margin: 50px auto 0 auto;
+}
+
+/* Title */
+.newsletter-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #00c6ff;
+    margin-bottom: 10px;
+}
+
+/* Subtitle */
+.newsletter-text {
+    font-size: 1.2rem;
+    color: #cfcfcf;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+/* Form */
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Input */
+.newsletter-form input {
+    padding: 14px 18px;
+    font-size: 1rem;
+    border-radius: 50px;
+    border: 2px solid #00c6ff;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    width: 60%;
+    min-width: 250px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.newsletter-form input:focus {
+    border-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 198, 255, 0.5);
+
+
+}
+
+/* Button */
+.newsletter-form button {
+    padding: 14px 20px;
+    font-size: 1rem;
+    border-radius: 50px;
+    border: none;
+    background: #00c6ff;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background: #0096c7;
+    transform: translateY(-3px);
+}
+
+/* Privacy Note */
+.newsletter-note {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-top: 15px;
+    font-style: italic;
+}
+.subscribe-message {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+/* Responsive */
+@media (max-width: 768px) {
+    .newsletter-form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .newsletter-form input,
+    .newsletter-form button {
+        width: 100%;
+    }
+}
+
+.subscribe-message {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    text-align: center;
+}
 
 
 
@@ -593,6 +914,7 @@ footer {
     gap: 30px;
     justify-items: center;
     margin-top: 40px;
+    padding-bottom: 40px;
 }
 
 /* Skill Category */
@@ -2252,3 +2574,65 @@ footer {
 
 
 
+
+
+
+/* General Styles for homepage-skills section */
+
+/* Ensure styles are only applied to the homepage skills section */
+#homepage-skills {
+    background: linear-gradient(135deg, #1f1f1f, #007ced);  /* Gradient background */
+    padding: 120px 20px 60px 20px; /* Extra padding for spacing */
+    color: #fff;
+  
+}
+#homepage-skills h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#homepage-skills .skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 80px;
+    justify-items: center;
+}
+
+#homepage-skills .skill-category {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+#homepage-skills .skill-category h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+#homepage-skills .skill {
+    margin-bottom: 15px;
+}
+
+#homepage-skills .progress {
+    width: 100%;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 5px;
+}
+
+#homepage-skills .progress .bar {
+    height: 100%;
+    background-color: #007ced;
+    border-radius: 5px;
+}
+
+/* Icons for skill categories */
+#homepage-skills .skill-category i {
+    font-size: 2rem;
+    color: #007ced;
+    margin-bottom: 10px;
+}

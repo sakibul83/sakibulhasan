@@ -350,7 +350,7 @@ footer {
 
 
 
-/* Vlog Section */
+
 .vlog-section {
     text-align: center;
     padding: 60px 20px;
@@ -362,13 +362,15 @@ footer {
 
 /* Vlog Title */
 .vlog-title {
-    font-size: 3rem;
+ 
     font-weight: 800;
     letter-spacing: 1px;
     text-transform: uppercase;
     color: #9e8cfd; /* Elegant purple for title */
-    margin-bottom: 15px;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); /* Soft text shadow */
+    font-size: clamp(1.5rem, 5vw, 2.8rem); /* Scales between 1.5rem and 2.8rem */
+    text-align: center;
+    margin-bottom: 15px;
 }
 
 /* Vlog Subtitle */
@@ -387,6 +389,7 @@ footer {
     padding: 30px;
     max-width: 1300px;
     margin: auto;
+
 }
 
 /* Vlog Card Styling */
@@ -394,14 +397,14 @@ footer {
 .vlog-card {
     position: relative;
     background : rgba(255, 255, 255, 0.08); /* Slightly off-white for card */
-    background-color: #2d46843f;
+    background-color: #0c4cec3f;
     backdrop-filter: blur(8px); /* Subtle blur */
     border-radius: 12px;
     padding: 30px;
     display: flex;
     flex-direction: column; /* Stack content vertically */
     justify-content: space-between; /* Make space between content and button */
-    height: 350px; /* Set a fixed height for consistency */
+    height: 589px; /* Set a fixed height for consistency */
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
@@ -449,11 +452,13 @@ footer {
     font-weight: bold;
     transition: background 0.3s ease, transform 0.2s ease-in-out;
     font-size: 1.1rem;
+    
 }
 
 
 .vlog-content .btn {
-    margin-top: 15px; 
+    margin-top: auto;
+    
     align-self: center; 
 }
 
@@ -504,27 +509,440 @@ footer {
 }
 
 
-@media (max-width: 768px) {
-    .vlog-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* More compact on small screens */
-    }
+@media (max-width: 1024px) {
     .vlog-title {
-        font-size: 2rem;
+        font-size: 2.5rem;
+    }
+    .vlog-subtitle {
+        font-size: 1.2rem;
+    }
+   
+    .vlog-grid {
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+        
+    }
+}
+
+@media (max-width: 768px) {
+    .vlog-title {
+        font-size: 1.8rem;
     }
     .vlog-subtitle {
         font-size: 1.1rem;
     }
+    .vlog-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        justify-content: center;
+    }
+    .vlog-card {
+        height: auto;
+        padding: 25px;
+    }
     .vlog-content h3 {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
+    }
+    .vlog-content p {
+        font-size: 1rem;
+    }
+    .vlog-content .btn {
+        font-size: 1rem;
+        padding: 10px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    
+    .main-content .vlog-title{
+        font-size: 1.2rem;
+        line-height: 1.2;
+
+    }
+    .vlog-subtitle {
+        font-size: 1rem;
+    }
+    .vlog-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 15px;
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .vlog-card {
+        padding: 20px;
+        width: 100%;
+        max-width: 280px;
+    }
+    .vlog-content h3 {
+        font-size: 1.4rem;
     }
     .vlog-content p {
         font-size: 0.95rem;
     }
     .vlog-content .btn {
-        font-size: 0.95rem;
-        padding: 10px 16px;
+        font-size: 0.9rem;
+        padding: 8px 14px;
     }
 }
+
+
+
+
+.mini-portfolio {
+    text-align: center;
+    padding: 50px 20px;
+    background: #5137a076;
+    color: #f8f8f8;
+    border-radius: 20px; /* Soft rounded corners */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+    max-width: 1100px;
+    margin: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+
+/* Add a hover effect for a slight pop-up */
+.mini-portfolio:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Make sure everything inside is well-spaced */
+.mini-portfolio .mini-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffbf69; /* Eye-catching color */
+    margin-bottom: 15px;
+}
+
+.mini-portfolio .mini-subtitle {
+    font-size: 1.2rem;
+    color: #ddd;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+
+.mini-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #9e8cfd;
+}
+
+.mini-subtitle {
+    font-size: 1.2rem;
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+.mini-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.mini-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(6px);
+    padding: 20px;
+    border-radius: 12px;
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.mini-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.mini-card h3 {
+    font-size: 1.3rem;
+    margin: 15px 0;
+    color: #ff9b80;
+}
+
+.mini-card:hover {
+    transform: translateY(-5px);
+}
+
+.mini-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #7f6df2;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.mini-btn:hover {
+    background: #5a4bc8;
+}
+
+.mini-view-more {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 22px;
+    background: #00c6ff;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.mini-view-more:hover {
+    background: #0086b3;
+    transform: translateY(-3px);
+}
+
+
+/* Responsive Design for Small Screens */
+@media (max-width: 1024px) {
+    .mini-portfolio {
+        max-width: 90%;
+        padding: 40px 15px;
+        border-radius: 15px;
+    }
+
+    .mini-portfolio .mini-title {
+        font-size: 1.2rem;
+       
+    }
+    
+
+    .mini-subtitle {
+        font-size: 1rem;
+    }
+
+    .mini-grid {
+        max-width: 100%;
+        gap: 15px;
+    }
+
+    .mini-card {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mini-portfolio {
+        padding: 30px 10px;
+        border-radius: 12px;
+    }
+
+    .mini-title {
+        font-size: 1.8rem;
+    }
+
+    .mini-subtitle {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .mini-card {
+        width: 100%;
+        max-width: 250px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mini-portfolio {
+        padding: 25px 8px;
+        border-radius: 10px;
+    }
+
+    .mini-title {
+        font-size: 1.2rem;
+    }
+
+    .mini-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .mini-card {
+        width: 100%;
+        max-width: 230px;
+        padding: 12px;
+    }
+}
+
+
+
+
+.certificates {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.certificates h2 {
+    font-size: 2.0rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.certificates p {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-bottom: 40px;
+}
+
+/* Background ONLY for the certificates container */
+.certificate-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.05); /* Light background */
+    padding: 30px;
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Styling for each individual certificate card */
+.certificate-card {
+    width: calc(33.333% - 20px); /* 3 cards per row */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background: rgba(56, 43, 146, 0.311); /* White card background */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Light border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.certificate-image {
+    width: 90%; /* Ensures image stays within card */
+    height: auto; /* Keep aspect ratio */
+    object-fit: contain; /* No cropping */
+    padding-top: 10px;
+    margin-bottom: 15px;
+}
+
+.main content .certificate h2{
+    font-size: 2.2rem;
+}
+
+.certificate-info h5 {
+    color: #ccb5b5; 
+}
+
+.certificate-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.certificate-description {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.certificate-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Ensures spacing */
+    flex-grow: 1; /* Makes sure all cards expand equally */
+    height: 100%; /* Ensures equal height for all cards */
+}
+
+.certificate-btn {
+    margin-top: auto; /* Pushes the button to the bottom */
+    display: inline-block;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+
+.certificate-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .certificate-card {
+        width: calc(50% - 20px); /* 2 cards per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .certificate-card {
+        width: calc(100% - 20px); /* 1 card per row on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .certificates h2 {
+        font-size: 1.5rem;
+    }
+
+    .certificates p {
+        font-size: 0.95rem;
+    }
+
+    .certificate-gallery {
+        gap: 10px;
+    }
+
+    .certificate-card {
+        max-width: 280px;
+        padding: 10px;
+    }
+
+    .certificate-image {
+        max-width: 150px;
+    }
+
+    .certificate-title {
+        font-size: 1rem;
+    }
+
+    .certificate-description {
+        font-size: 0.8rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Newsletter Section */
 .newsletter {
@@ -634,6 +1052,27 @@ footer {
     transition: opacity 0.4s ease-in-out;
     text-align: center;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

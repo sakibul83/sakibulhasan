@@ -2629,174 +2629,372 @@ footer {
 
 
 
-/* Contact Section */
+/* =========================
+   CONTACT SECTION
+========================= */
+
 .contact-main {
     padding: 100px 0;
     background-color: #f7f7f7;
     color: #333;
+    min-height: calc(100vh - 150px);
 }
 
+
 /* Wrapper */
+
 .contact-wrapper {
     width: 85%;
     max-width: 1200px;
     margin: 0 auto;
+
     display: grid;
     grid-template-columns: 1fr 1fr;
+
     gap: 3rem;
-    align-items: center;
+    align-items: stretch;
 }
 
-/* Contact Info & Form */
+
+/* Cards */
+
 .contact-info,
 .contact-form {
     background: #fff;
+
     padding: 40px;
+
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+    animation: fadeIn 0.8s ease-out;
 }
 
-/* Contact Info Header */
+
+/* Headings */
+
 .contact-info h2,
 .contact-form h2 {
     font-size: 2.2rem;
     font-weight: 700;
+
     margin-bottom: 1.5rem;
+
     color: #1d3557;
 }
 
-/* Contact Info Text */
+
+/* Description */
+
 .contact-info p {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+
+    margin-bottom: 1.8rem;
+
     color: #555;
 }
 
-/* Contact Info List */
+
+/* Contact list */
+
 .contact-info ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
+
+
+/* Contact items */
 
 .contact-info ul li {
-    font-size: 1.1rem;
-    color: #333;
-    padding: 12px 18px;
+    font-size: 1rem;
+
+    padding: 15px 18px;
+
     border-radius: 8px;
+
     background-color: #f1f1f1;
+
     margin-bottom: 12px;
+
     display: flex;
     align-items: center;
-    transition: background-color 0.3s ease;
+
+    gap: 15px;
+
+    transition: all 0.3s ease;
 }
 
-/* Contact Info Icons */
+
+/* Icons */
+
 .contact-info ul li i {
-    font-size: 1.5rem;
-    margin-right: 15px;
+    font-size: 1.4rem;
+
+    min-width: 25px;
+
     color: #4f88b1;
 }
 
-/* Hover Effect for Contact Info */
-.contact-info ul li:hover {
-    background-color: #e2e8f0;
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+/* Text inside contact items */
+
+.contact-info ul li div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
 }
 
-/* Social Media Links */
+.contact-info ul li strong {
+    color: #1d3557;
+}
+
+.contact-info ul li span {
+    color: #555;
+}
+
+
+/* Hover */
+
+.contact-info ul li:hover {
+    background-color: #e2e8f0;
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Social Media */
+
 .social-media {
     display: flex;
+
     gap: 1.5rem;
-    margin-top: 20px;
+
+    margin-top: 25px;
 }
 
 .social-media a {
     font-size: 1.7rem;
+
     color: #4f88b1;
+
     text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
+
+    transition: all 0.3s ease;
 }
 
 .social-media a:hover {
     color: #1d3557;
+
     transform: translateY(-5px);
 }
 
-/* Contact Form */
+
+/* =========================
+   FORM
+========================= */
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Labels */
+
+.contact-form label {
+    font-size: 0.95rem;
+
+    font-weight: 600;
+
+    color: #333;
+
+    margin-bottom: 7px;
+}
+
+
+/* Inputs */
+
 .contact-form input,
 .contact-form textarea {
-    padding: 15px;
-    margin-bottom: 1.5rem;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    font-size: 1.1rem;
+
     width: 100%;
-    transition: all 0.3s ease;
+
+    box-sizing: border-box;
+
+    padding: 14px 15px;
+
+    margin-bottom: 1.3rem;
+
+    border: 2px solid #ddd;
+
+    border-radius: 8px;
+
+    font-family: inherit;
+
+    font-size: 1rem;
+
     background-color: #fafafa;
+
+    transition: all 0.3s ease;
 }
 
-/* Focus Effect on Form Inputs */
+
+/* Textarea */
+
+.contact-form textarea {
+
+    min-height: 150px;
+
+    resize: vertical;
+}
+
+
+/* Focus */
+
 .contact-form input:focus,
 .contact-form textarea:focus {
+
     border-color: #4f88b1;
+
     outline: none;
-    box-shadow: 0 0 8px rgba(79, 136, 177, 0.4);
+
+    background-color: #fff;
+
+    box-shadow: 0 0 8px rgba(79, 136, 177, 0.25);
 }
 
-/* Submit Button */
+
+/* Button */
+
 .contact-form button {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
     background-color: #4f88b1;
+
     color: white;
+
     padding: 15px 20px;
+
     border: none;
+
     border-radius: 8px;
-    font-size: 1.1rem;
+
+    font-family: inherit;
+
+    font-size: 1.05rem;
+
     cursor: pointer;
+
     font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    width: 100%;
+
+    transition: all 0.3s ease;
 }
+
 
 .contact-form button:hover {
+
     background-color: #2a3d66;
-    transform: translateY(-5px);
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 18px rgba(42, 61, 102, 0.2);
 }
 
-/* Fade-In Animation */
+
+/* =========================
+   ANIMATION
+========================= */
+
 @keyframes fadeIn {
-    0% {
+
+    from {
         opacity: 0;
         transform: translateY(20px);
     }
-    100% {
+
+    to {
         opacity: 1;
         transform: translateY(0);
     }
+
 }
 
-/* Applying Fade-in to Both Sections */
-.contact-info, .contact-form {
-    animation: fadeIn 1s ease-out;
-}
 
-/* Responsive Design */
+/* =========================
+   RESPONSIVE
+========================= */
+
 @media (max-width: 768px) {
+
+    .contact-main {
+        padding: 60px 0;
+    }
+
     .contact-wrapper {
+
+        width: 90%;
+
         grid-template-columns: 1fr;
+
+        gap: 2rem;
+    }
+
+    .contact-info,
+    .contact-form {
+
+        padding: 30px 25px;
     }
 
     .contact-info h2,
     .contact-form h2 {
+
         font-size: 1.8rem;
     }
 
     .social-media a {
+
         font-size: 1.5rem;
     }
+
 }
 
+
+@media (max-width: 480px) {
+
+    .contact-main {
+        padding: 40px 0;
+    }
+
+    .contact-wrapper {
+        width: 92%;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 25px 20px;
+    }
+
+    .contact-info h2,
+    .contact-form h2 {
+        font-size: 1.6rem;
+    }
+
+    .contact-info ul li {
+        padding: 13px;
+    }
+
+}
 
 
 
